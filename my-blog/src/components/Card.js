@@ -1,6 +1,4 @@
 
-const todoTitle = 'Call Family'
-const todoDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, et?";
 const date = new Date();
 const dateName = date.getDate();
 const monthNAme = date.getMonth();

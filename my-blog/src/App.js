@@ -7,7 +7,7 @@ function App(){
 
     return  <div>
                 <h1 className="headingStyle">Todo App</h1>
-                {Data.map((data) => <Card titleText={data.title} descText={data.desc}/>)}
+                {Data.map((data, index) => <Card key={index} titleText={data.title} descText={data.desc}/>)}
             </div>
 }
 

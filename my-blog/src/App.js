@@ -1,13 +1,10 @@
 import React from "react";
-import Card from "./components/Card";
-import Data from './data.json';
-
+import Card1 from "./components/Card1";
 
 function App(){
 
     return  <div>
-                <h1 className="headingStyle">Todo App</h1>
-                {Data.map((data, index) => <Card key={index} titleText={data.title} descText={data.desc}/>)}
+                <Card1 name="card1" desc="this is card1"/>
             </div>
 }
 

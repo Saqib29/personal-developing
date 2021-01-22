@@ -5,13 +5,9 @@ import Data from './data.json';
 
 function App(){
 
-    let items = [];
-    
-    items = Data.map((data) => <Card titleText={data.title} descText={data.desc}/>);
-
     return  <div>
                 <h1 className="headingStyle">Todo App</h1>
-                {items}
+                {Data.map((data) => <Card titleText={data.title} descText={data.desc}/>)}
             </div>
 }
 

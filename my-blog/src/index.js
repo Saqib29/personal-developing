@@ -8,9 +8,16 @@ const dateName = date.getDate();
 const monthNAme = date.getMonth();
 const currentYear = date.getFullYear();
 
+const headStyle = {
+  backgroundColor : "purple",
+  color: "white",
+  textAlign : "center",
+  padding : "15px"
+}
+
 ReactDOM.render(
   <div>
-    <h1>Todo App</h1>
+    <h1 style={ headStyle }>Todo App</h1>
     <h3>{ todoTitle }</h3>
     <p>{ todoDesc }</p>
     <p>{ dateName + "/" + monthNAme + "/" + currentYear }</p>

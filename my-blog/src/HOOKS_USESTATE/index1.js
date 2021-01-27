@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class EVENT_BINDING extends Component {
+export default class HOOKS_USESTATE extends Component {
 
     constructor(props) {
         super(props)
@@ -8,20 +8,22 @@ export default class EVENT_BINDING extends Component {
         this.state = {
              count : 0
         }
-        this.handleClick = this.handleClick.bind(this);
     }
     
-    handleClick() {
+    handleIncrement = () => {
         this.setState({
             count : this.state.count + 1
-        })
+        });
     }
 
     render() {
+
+        const { count } = this.state
+
         return (
             <div>
-                <h1>{ this.state.count }</h1>
-                <button onClick={this.handleClick}>increase</button>
+                <h1>Count: { count }</h1>
+                <button onClick={this.handleIncrement}>increment</button>
             </div>
         )
     }

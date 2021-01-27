@@ -1,10 +1,10 @@
 import React from 'react'
-import EVENT_BINDING from './EVENT_BINDING/index'
+import HOOKS_USESTATE from './HOOKS_USESTATE/index1'
 
 export default function App() {
     return (
         <div>
-            <EVENT_BINDING />
+            <HOOKS_USESTATE />
         </div>
     )
 }

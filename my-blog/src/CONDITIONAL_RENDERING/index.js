@@ -7,21 +7,28 @@ class CONDITIONAL_RENDERING extends Component {
         super(props)
     
         this.state = {
-             isLoggedIn : false
+             isLoggedIn : true
         }
     }
     
 
     render() {
          
-        const what = this.state.isLoggedIn
+        const { isLoggedIn } = this.state
+        let element
 
-        if(what){
-            return <HomePAge />
+        if(isLoggedIn){
+            element =  <HomePAge />
         }
         else {
-            return <LoginPage />
+            element = <LoginPage />
         }
+
+        return(
+            <div>
+                { element }
+            </div>
+        )
     }
 }
 

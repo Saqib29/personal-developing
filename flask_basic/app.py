@@ -2,7 +2,13 @@ from flask import Flask, redirect, render_template, url_for, request, session, f
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
 
+from second_file import second
+from admin_file import admin
+
 app = Flask(__name__)
+app.register_blueprint(second, url_prefix="")
+app.register_blueprint(admin, url_prefix="/admin") # type url -> /admin
+
 # session needs a secrete key
 app.secret_key = "secrete_key"
 
@@ -24,12 +30,12 @@ class users(db.Model):
 # time can be set for session as minutes/days/seconds
 app.permanent_session_lifetime = timedelta(minutes=5)
 
-@app.route("/")
-def home():
-    if "name" not in session:
-        flash("Login first!")
-        return redirect(url_for('login'))
-    return render_template("index.html", name=session["name"])
+# @app.route("/")
+# def home():
+#     if "name" not in session:
+#         flash("Login first!")
+#         return redirect(url_for('login'))
+#     return render_template("index.html", name=session["name"])
 
 @app.route("/login", methods=["POST", "GET"])
 def login():

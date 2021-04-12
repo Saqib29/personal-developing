@@ -22,7 +22,7 @@ def login():
         return redirect(url_for("user", usr=session["name"]))
     else:
         if "name" in session:
-            flash("Already logged IN!")
+            flash("Already logged in!")
             return redirect(url_for("user"))
 
         return render_template("login.html")

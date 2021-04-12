@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+View All users
+{% endblock %}
+
+{% block content %}
+    {% for item in values%}
+        <div class="container mt-3">
+            <div class="alert alert-secondary">
+                <p>Name: {{ item.name }}</p>
+                <span>Email: {{ item.email }}</span>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

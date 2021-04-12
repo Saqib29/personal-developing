@@ -26,7 +26,10 @@ app.permanent_session_lifetime = timedelta(minutes=5)
 
 @app.route("/")
 def home():
-    return render_template("index.html", name="Saqib Aminul")
+    if "name" not in session:
+        flash("Login first!")
+        return redirect(url_for('login'))
+    return render_template("index.html", name=session["name"])
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
